@@ -26,8 +26,8 @@ else:
 
 while file_name != '\x18' and prot == "1.1":
     request = 'GET /{} HTTP/1.1\r\n'.format(file_name)
-    request += 'Host: depressed.boy.depr\r\n'
-    request += 'Accept-Language: pt\r\n'
+    request += 'Host: ufs.client.br\r\n'
+    request += 'Accept-Language: *\r\n'
     print("sending request: \n", request)
     tcp.send(bytes(request, "utf-8"));
     response = tcp.recv(1024).decode("utf-8")
@@ -40,8 +40,8 @@ while url != '\x18' and prot == "Tupi":
     if url == '':
         url = "https://ccsa.ufs.br/pagina/20168-departamento-de-ciencia-da-informacao"
     request = 'GET / HTTP/Tupi\r\n'
-    request += 'Host: depressed.boy.depr\r\n'
-    request += 'Accept-Language: pt\r\n'
+    request += 'Host: ufs.client.br\r\n'
+    request += 'Accept-Language: *\r\n'
     request += 'URL_Field: {}\r\n'.format(url)
     print("sending request: \n", request)
     tcp.send(bytes(request, "utf-8"));
