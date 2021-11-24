@@ -28,10 +28,10 @@ while file_name != '\x18' and prot == "1.1":
     request = 'GET /{} HTTP/1.1\r\n'.format(file_name)
     request += 'Host: ufs.client.br\r\n'
     request += 'Accept-Language: *\r\n'
-    print("sending request: \n", request)
+    print("sending request:\n", request)
     tcp.send(bytes(request, "utf-8"));
     response = tcp.recv(1024).decode("utf-8")
-    print("received response: \n", response)
+    print("received response:\n", response)
 
     print('Informe o nome do arquivo: ')
     file_name = input()

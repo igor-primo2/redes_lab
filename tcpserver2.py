@@ -36,7 +36,7 @@ while True:
         if first_line.find('HTTP/Tupi') == -1:
             #resposta http/1.1 normal
             now = datetime.now()
-            now_s = now.strftime("%a, %-d %b %Y %H:%M:%S %Z")
+            now_s = now.strftime("%a, %d %b %Y %H:%M:%S %Z")
             if not file_:
                 size_err = os.path.getsize('./error.html')
                 try:
@@ -74,14 +74,14 @@ while True:
                     pass 
                 response = 'HTTP/Tupi 404 Not Found\r\n'
                 response += 'Date: {}\r\n'.format(now_s)
-                response += 'Server: Server\r\n'
+                response += 'Server: server\r\n'
                 response += 'Content-Length: {}\r\n'.format(size_err)
                 response += 'Content-Type: text/html\r\n\r\n'
                 response += ''.join(file_)
             else:
                 response = 'HTTP/Tupi 200 OK\r\n'
                 response += 'Date: {}\r\n'.format(now_s)
-                response += 'Server: Server\r\n'
+                response += 'Server: server\r\n'
                 response += 'Content-Type: text/plain\r\n\r\n'
 
                 #url = "https://ccsa.ufs.br/pagina/20168-departamento-de-ciencia-da-informacao"
